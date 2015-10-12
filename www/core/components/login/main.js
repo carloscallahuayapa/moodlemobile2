@@ -23,9 +23,9 @@ angular.module('mm.core.login', [])
         abstract: true,
         templateUrl: 'core/components/login/templates/base.html',
         cache: false,   // Disable caching to force controller reload.
-        onEnter: function($ionicHistory) {
+        onEnter: function($state) {
             // Ensure that there is no history stack when getting here.
-            $ionicHistory.clearHistory();
+            $state.go('mm_login.credentials', {siteurl: 'http://maestro21.edu.pe'});
         }
     })
 
